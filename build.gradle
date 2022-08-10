@@ -1,0 +1,35 @@
+
+apply plugin: 'java'
+
+sourceSets {
+	main {
+		java {
+			srcDir 'src'
+		}
+	}
+}
+
+repositories {
+	flatDir {
+		dirs 'deps'
+	}
+}
+
+dependencies {
+	//implementation name: 'org.apache.logging:log4j:2.18.0'
+	implementation name: 'log4j-api-2.18.0'
+	implementation name: 'log4j-core-2.18.0'
+
+}
+
+task run(type: JavaExec) {
+	// for this to work, make sure JAVA_HOME is set in your env, e.g.
+	// export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
+	group = 'Run'
+	description = 'description'
+
+	classpath sourceSets.main.runtimeClasspath
+	//main = "com.Hello"
+	main = "hello.Hello"
+}
+

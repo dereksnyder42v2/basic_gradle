@@ -41,5 +41,16 @@ task runLogger(type: JavaExec) {
 
 	classpath sourceSets.main.runtimeClasspath
 	//main = "com.Hello"
-	main = "logger.Logger"
+	main = "logging.Logger"
+}
+
+task runProp(type: JavaExec) {
+	// for this to work, make sure JAVA_HOME is set in your env, e.g.
+	// export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
+	group = 'Run'
+	description = 'description'
+
+	classpath sourceSets.main.runtimeClasspath
+	//main = "com.Hello"
+	main = "logging.PropertyConfigurator"
 }

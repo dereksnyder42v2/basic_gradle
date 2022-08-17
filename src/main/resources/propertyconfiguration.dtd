@@ -1,0 +1,5 @@
+<!DOCTYPE propertyconfiguration
+[
+<!ELEMENT propertyconfiguration (book)>
+<!ELEMENT book (#PCDATA)>
+]>

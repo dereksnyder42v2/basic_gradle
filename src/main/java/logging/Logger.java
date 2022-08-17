@@ -1,41 +1,37 @@
 package logging;
 
 import org.apache.logging.log4j.LogManager;
-// import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.spi.AbstractLogger;
+import org.apache.logging.log4j.simple.SimpleLogger;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.message.MessageFactory;
+import org.apache.logging.log4j.util.PropertiesUtil;
 
-// abstract class AbstractLoggerC implements org.apache.logging.log4j.Logger {
+import java.io.PrintStream;
 
-//     public static void main(String[] args) {
-//         System.out.println("Logger.java: hello world!");
-//     }
 
-//     @Override
-//     public void warn(String message, Object... params) {
-//         ;
-//     }
-// }
+public class Logger extends SimpleLogger {
 
-public class Logger implements org.apache.logging.log4j.Logger {
-
-    public Logger() {
-        ;
+    public Logger(String name, 
+        Level defaultLevel, 
+        boolean showLogName, 
+        boolean showShortLogName, 
+        boolean showDateTime, 
+        boolean showContextMap, 
+        String dateTimeFormat, 
+        MessageFactory messageFactory, 
+        PropertiesUtil props, 
+        PrintStream stream) {
+        
+        super(name, defaultLevel, showLogName, showShortLogName, showDateTime, showContextMap, dateTimeFormat, messageFactory, props, stream);
+        
     }
+
     public void someMethod() {
         ;
     }
-    @Override
-    public void void warn(String message,
-        Object p0,
-        Object p1,
-        Object p2,
-        Object p3,
-        Object p4,
-        Object p5,
-        Object p6,
-        Object p7,
-        Object p8,
-        Object p9) {
-        ;
+
+    public static void main(String[] args) {
+        System.out.println("Logger.java: hello world!");
     }
+    
 }
